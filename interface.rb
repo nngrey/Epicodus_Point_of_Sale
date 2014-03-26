@@ -93,19 +93,19 @@ def cashier(shopping_cart)
   menu
 end
 
-def add_item
-  puts "Select which product to add to the customer's purchase"
-  products = Product.all
-  products.each { |product| puts product.name }
-  product_name = gets.chomp
-  product_id = Product.where(:name => product_name).first['id']
+# def add_item
+#   puts "Select which product to add to the customer's purchase"
+#   products = Product.all
+#   products.each { |product| puts product.name }
+#   product_name = gets.chomp
+#   product_id = Product.where(:name => product_name).first['id']
 
-  puts "Enter the quantity being purchased"
-  quantity = gets.chomp
-  new_purchase = Purchase.new(:cashier_id => cashier_id, :product_id => product_id, :quantity => quantity)
+#   puts "Enter the quantity being purchased"
+#   quantity = gets.chomp
+#   new_purchase = Purchase.new(:cashier_id => cashier_id, :product_id => product_id, :quantity => quantity)
 
-  puts "#{new_purchase.quantity} #{Product.find(product_id).name} have been added"
-end
+#   puts "#{new_purchase.quantity} #{Product.find(product_id).name} have been added"
+# end
 
 def customer
   shopping_cart = ShoppingCart.new
